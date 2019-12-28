@@ -26,8 +26,8 @@ func (u *UserRepository) FindByUsername(username string) (*domain.User, error) {
 func (u *UserRepository) Create(user *domain.User) error {
 	u.mu.Lock()
 	defer u.mu.Unlock()
-	_, ok := u.users[user.Username()]
-	if !ok {
+	uu, _ := u.users[user.Username()]
+	if uu != nil {
 		return errors.New("User already exist")
 	}
 	u.users[user.Username()] = user
@@ -46,5 +46,7 @@ func (u *UserRepository) ListAllUsers() []*domain.User {
 }
 
 func NewUserRepository() domain.UserRepository {
-	return &UserRepository{}
+	return &UserRepository{
+		users: make(map[string]*domain.User),
+	}
 }

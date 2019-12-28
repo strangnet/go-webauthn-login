@@ -94,7 +94,7 @@ func (h *registerHandler) finishRegistration(writer http.ResponseWriter, request
 
 	u.AddCredential(*credential)
 
-	err = h.users.Create(u)
+
 	if err != nil {
 		h.encoder.Error(ctx, writer, err)
 	}
