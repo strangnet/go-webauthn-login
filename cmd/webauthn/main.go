@@ -6,9 +6,18 @@ import (
 )
 
 func main() {
+	r := createRouter()
+	http.ListenAndServe(":4711", r)
+}
+
+func createRouter() *chi.Mux {
 	r := chi.NewRouter()
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Welcome"))
+		w.Write([]byte(Hello()))
 	})
-	http.ListenAndServe(":4711", r)
+	return r
+}
+
+func Hello() string {
+	return "Hello, World!"
 }
