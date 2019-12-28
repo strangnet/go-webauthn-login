@@ -4,3 +4,13 @@
 # go-webauthn-login
 
 A simple login backend implementation for webauthn.
+
+## Endpoints
+
+- http://localhost servers the index.html page with a test form that handles registering and login
+- `GET /api/register/begin/{username}`
+- `POST /api/register/finish/{username}`
+- `GET /api/login/begin/{username}`
+- `POST /api/login/finish/{username}`
+
+The current implementation is based on the work of [hbolimovsky](https://github.com/hbolimovsky) in his [webauthn-example](https://github.com/hbolimovsky/webauthn-example)
