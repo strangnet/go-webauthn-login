@@ -13,4 +13,4 @@ A simple login backend implementation for webauthn.
 - `GET /api/login/begin/{username}`
 - `POST /api/login/finish/{username}`
 
-The current implementation is based on the work of [hbolimovsky](https://github.com/hbolimovsky) in his [webauthn-example](https://github.com/hbolimovsky/webauthn-example)
+The current implementation is based on the work of [hbolimovsky](https://github.com/hbolimovsky) in his [webauthn-example](https://github.com/hbolimovsky/webauthn-example).
